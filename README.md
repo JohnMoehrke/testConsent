@@ -21,9 +21,9 @@ There is nothing an IG can do about either of these. The R4B included a technica
 
 Note that the Consent can hold examples. It just produces errors on profiling.
 
-### also note
+### also note with R4B publisher
 
 Odd that the Consent.sourceReference seems to have some strangeness too. When I use it, I get an error thrown by the IG builder, although it does not show up in the QA report
 > Unable to convert resource Consent/ex-consent property sourceReference is a class com.google.gson.JsonObject looking for an Array (01:13.793)
 
-.
+this does not happen with R4 build

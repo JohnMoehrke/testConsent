@@ -1,6 +1,8 @@
 
 Consent testing for error.
 
+**FIXED WITH IG BUILDER 126**
+
 ### R4 error
 
 BUilding with R4 will result in a known profiling bug that gives the error

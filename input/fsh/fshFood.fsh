@@ -99,3 +99,24 @@ Description: "Consent constrained minimally to be a patient privacy consent."
 * dateTime 1..1
 * performer 1..
 * organization 1..
+
+
+CodeSystem: OtherActivity
+Title: "One code to identify an activity of profile validating"
+Description: "one more code"
+* ^caseSensitive = true
+* #FhirProfileValidation "FHIR Profile Validation"
+
+Instance: ex-provenance
+InstanceOf: Provenance
+Title: "Provenance of Consent conforming to PrivacyConsent profile"
+Description: "Example of what a Provenance might look like that has been validated by some agent"
+Usage: #example
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* target = Reference(Consent/ex-consent)
+* recorded = 2022-08-31T09:49:00.000Z
+// policy holds the canonical URI of the profile that the resource was validated against
+* policy = "http://johnmoehrke.github.io/testconsent/StructureDefinition/PrivacyConsent"
+* activity = OtherActivity#FhirProfileValidation
+* agent.type = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#VERF
+* agent.who = Reference(ex-organization)

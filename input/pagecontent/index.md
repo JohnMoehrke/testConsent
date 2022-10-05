@@ -25,3 +25,8 @@ Odd that the Consent.sourceReference seems to have some strangeness too. When I 
 > Unable to convert resource Consent/ex-consent property sourceReference is a class com.google.gson.JsonObject looking for an Array (01:13.793)
 
 this does not happen with R4 build
+
+# Provenance
+
+Should show a [Provenance](Provenance-ex-provenance.html) on the artifacts page.
+

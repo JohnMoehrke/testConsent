@@ -88,6 +88,30 @@ Usage: #example
 * policy.uri = "http://example.org/policies/representative.xacml"
 * provision.type = #permit
 
+Profile: DegenerateConsent
+Parent: Consent
+Title: "Simple Consent Privacy with no provision"
+Description: "Consent constrained minimally to be a patient privacy consent, forbidding any provisions."
+* status = #active
+* scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy
+* patient 1..1
+* dateTime 1..1
+* performer 1..
+* organization 1..
+* provision 0..0
+
+Profile: OneConsent
+Parent: Consent
+Title: "Simple Consent Privacy with root provision but nothing more"
+Description: "Consent constrained minimally to be a patient privacy consent, with restriction on one level deep."
+* status = #active
+* scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy
+* patient 1..1
+* dateTime 1..1
+* performer 1..
+* organization 1..
+* provision.provision 0..0
+
 Profile: PrivacyConsent
 Parent: Consent
 Title: "Simple Consent Privacy with two provisions deep"
@@ -98,6 +122,7 @@ Description: "Consent constrained minimally to be a patient privacy consent, wit
 * dateTime 1..1
 * performer 1..
 * organization 1..
+* provision 1..1
 * provision.provision MS 
 * provision.provision.provision 0..0
 

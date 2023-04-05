@@ -90,8 +90,8 @@ Usage: #example
 
 Profile: PrivacyConsent
 Parent: Consent
-Title: "Simple Consent Privacy"
-Description: "Consent constrained minimally to be a patient privacy consent."
+Title: "Simple Consent Privacy with two provisions deep"
+Description: "Consent constrained minimally to be a patient privacy consent, with restriction of provisions only two levels deep."
 * status = #active
 * scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy
 * patient 1..1

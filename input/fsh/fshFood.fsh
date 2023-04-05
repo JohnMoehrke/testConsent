@@ -92,31 +92,71 @@ Profile: PrivacyConsent
 Parent: Consent
 Title: "Simple Consent Privacy"
 Description: "Consent constrained minimally to be a patient privacy consent."
-* modifierExtension 0..0
 * status = #active
 * scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy
 * patient 1..1
 * dateTime 1..1
 * performer 1..
 * organization 1..
+* provision.provision MS 
+* provision.provision.provision 0..0
 
 
 CodeSystem: OtherActivity
 Title: "One code to identify an activity of profile validating"
 Description: "one more code"
 * ^caseSensitive = true
+* ^experimental = false
 * #FhirProfileValidation "FHIR Profile Validation"
 
-Instance: ex-provenance
-InstanceOf: Provenance
-Title: "Provenance of Consent conforming to PrivacyConsent profile"
-Description: "Example of what a Provenance might look like that has been validated by some agent"
+
+
+
+Instance: ex-consent-2
+InstanceOf: PrivacyConsent
+Title: "Consent example with two provisions deep"
+Description: "This consent is legal Consent, and legal profiled PrivacyConsent"
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* target = Reference(Consent/ex-consent)
-* recorded = 2022-08-31T09:49:00.000Z
-// policy holds the canonical URI of the profile that the resource was validated against
-* policy = "http://johnmoehrke.github.io/testconsent/StructureDefinition/PrivacyConsent"
-* activity = OtherActivity#FhirProfileValidation
-* agent.type = http://terminology.hl7.org/CodeSystem/contractsignertypecodes#VERF
-* agent.who = Reference(ex-organization)
+* status = #active
+* scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy
+* category[+] = http://loinc.org#64292-6 "Release of information consent"
+* category[+] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL
+* patient = Reference(Patient/ex-patient)
+* dateTime = "2022-06-13"
+* performer = Reference(Patient/ex-patient)
+* organization = Reference(Organization/ex-organization)
+* sourceReference = Reference(DocumentReference/ex-documentreference)
+* policy.uri = "http://example.org/policies/representative.xacml"
+* provision.type = #permit
+* provision.provision.type = #deny
+* provision.provision.dataPeriod.start = 2022-01
+* provision.provision.dataPeriod.end = 2022-12
+
+
+
+
+Instance: ex-consent-3
+InstanceOf: Consent
+Title: "Consent example with three provisions deep"
+Description: "This consent is legal Consent, but not to the profiled PrivacyConsent"
+Usage: #example
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* status = #active
+* scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy
+* category[+] = http://loinc.org#64292-6 "Release of information consent"
+* category[+] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL
+* patient = Reference(Patient/ex-patient)
+* dateTime = "2022-06-13"
+* performer = Reference(Patient/ex-patient)
+* organization = Reference(Organization/ex-organization)
+* sourceReference = Reference(DocumentReference/ex-documentreference)
+* policy.uri = "http://example.org/policies/representative.xacml"
+* provision.type = #permit
+* provision.provision.type = #deny
+* provision.provision.dataPeriod.start = 2022-01
+* provision.provision.dataPeriod.end = 2022-12
+* provision.provision.provision.type = #permit
+* provision.provision.provision.dataPeriod.start = 2022-12
+
+

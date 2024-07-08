@@ -87,6 +87,8 @@ Usage: #example
 * sourceReference = Reference(DocumentReference/ex-documentreference)
 * policy.uri = "http://example.org/policies/representative.xacml"
 * provision.type = #permit
+//* provision.purpose = http://terminology.hl7.org/CodeSystem/v3-ActReason#HMARKT
+* provision.purpose = https://worldhealthorganization.github.io/smart-ips-pilgrimage/branches/consent-policies/CodeSystem-IPS.HAJJ.html#CONSENT-MYS
 
 
 Profile: DeDegenerateConsent

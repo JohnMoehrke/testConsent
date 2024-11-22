@@ -71,7 +71,7 @@ Usage: #example
 
 
 Instance: ex-consent
-InstanceOf: PrivacyConsent
+InstanceOf: https://profiles.ihe.net/ITI/PCF/StructureDefinition/IHE.PCF.consentAdvanced
 Title: "Simple Consent example"
 Description: "Consent justifying authorizing access"
 Usage: #example

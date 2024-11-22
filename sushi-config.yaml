@@ -34,6 +34,9 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
   apply-publisher: 'true'
   apply-version: 'true'
 
+dependencies:
+  ihe.iti.pcf: 1.1.x
+
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯

@@ -37,7 +37,7 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
 dependencies:
   ihe.iti.pcf: 1.1.x
   hl7.fhir.uv.extensions.r4: 5.2.0-ballot
-  hl7.terminology.r4: 6.0.2
+
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
